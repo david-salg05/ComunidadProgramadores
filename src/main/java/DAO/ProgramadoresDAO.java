@@ -11,25 +11,38 @@ public class ProgramadoresDAO {
 
     //Funcion que comprueba si ya existe el nombre de usuario pasado como parametro
     public static boolean existeUsuario(String nombreUsuario) {
+
+        // Abro la bd
+        ObjectContainer bd = conexionBD.abrirConexion();
+
+        // Abro la lista de usuarios
+        ObjectSet<Programadores> listaProgramadores = bd.query(Programadores.class);
+
+        boolean existe = false;
+
+        // Recorro la lista
+        for (Programadores p : listaProgramadores) {
+            if (p.getNombre().equalsIgnoreCase(nombreUsuario)) {
+                existe = true;
+                break;
+            }
+        }
+
+        // Cierro la bd
+        bd.close();
+
+        return existe;
+    }
+
+    //Funcion que registra y guarda un nuevo usuario en la bd
+    public static void registrarUsuario(Programadores p) {
         //Abro la bd
         ObjectContainer bd = conexionBD.abrirConexion();
 
-        //Abro la lista de usuarios
-        ObjectSet <Programadores> listaProgramadores = bd.query(Programadores.class);
-
-        //Recorro la lista y compruebo si su usuario corresponde con el que he pasado
-        for (Programadores p : listaProgramadores) {
-            if (p.getNombre().equalsIgnoreCase(nombreUsuario)) {
-                return true;
-                //Cierro la bd
-            }
-            //Cierro la bd
-            bd.close();
-        }
+        //Guardo el programador
+        bd.store(p);
 
         //Cierro la bd
         bd.close();
-
-        return false;
     }
 }

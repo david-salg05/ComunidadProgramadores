@@ -11,13 +11,13 @@
             <HBox prefHeight="43.0" prefWidth="371.0">
                <children>
                   <Label prefHeight="22.0" prefWidth="129.0" text="Nombre de usuario:" />
-                  <TextField prefHeight="5.0" prefWidth="134.0" />
+                  <TextField fx:id="regUsu" prefHeight="5.0" prefWidth="134.0" />
                </children>
             </HBox>
             <HBox layoutX="10.0" layoutY="10.0" prefHeight="38.0" prefWidth="371.0">
                <children>
                   <Label prefHeight="22.0" prefWidth="129.0" text="Contraseña:" />
-                  <TextField prefHeight="5.0" prefWidth="134.0" />
+                  <TextField fx:id="regContr" prefHeight="5.0" prefWidth="134.0" />
                </children>
             </HBox>
             <HBox layoutX="10.0" layoutY="53.0" prefHeight="82.0" prefWidth="371.0">
@@ -25,25 +25,26 @@
                   <Label prefHeight="22.0" prefWidth="129.0" text="Género:" />
                   <VBox prefHeight="82.0" prefWidth="158.0">
                      <children>
-                        <RadioButton mnemonicParsing="false" prefHeight="19.0" prefWidth="87.0" text="Hombre">
+                        <RadioButton fx:id="hombre" mnemonicParsing="false" prefHeight="19.0" prefWidth="87.0" text="Hombre">
                            <toggleGroup>
                               <ToggleGroup fx:id="idGenero" />
                            </toggleGroup>
                         </RadioButton>
-                        <RadioButton mnemonicParsing="false" prefHeight="31.0" prefWidth="87.0" text="Mujer" toggleGroup="$idGenero" />
-                        <RadioButton mnemonicParsing="false" prefHeight="17.0" prefWidth="141.0" text="Prefiero no decirlo" toggleGroup="$idGenero" />
+                        <RadioButton fx:id="mujer" mnemonicParsing="false" prefHeight="31.0" prefWidth="87.0" text="Mujer" toggleGroup="$idGenero" />
+                        <RadioButton fx:id="pnd" mnemonicParsing="false" prefHeight="17.0" prefWidth="141.0" text="Prefiero no decirlo" toggleGroup="$idGenero" />
                      </children></VBox>
                </children>
             </HBox>
             <HBox layoutX="10.0" layoutY="53.0" prefHeight="38.0" prefWidth="371.0">
                <children>
                   <Label fx:id="label" prefHeight="36.0" prefWidth="126.0" text="Lenguaje de &#10;programación: " />
-                  <ComboBox prefHeight="25.0" prefWidth="154.0" />
+                  <ComboBox fx:id="comboBox" prefHeight="25.0" prefWidth="154.0" />
                </children>
             </HBox>
          </children>
       </VBox>
-      <Button layoutX="176.0" layoutY="320.0" mnemonicParsing="false" text="Registrar" />
-      <Button layoutX="366.0" layoutY="320.0" mnemonicParsing="false" text="Volver al Login" />
+      <Button layoutX="135.0" layoutY="294.0" mnemonicParsing="false" onAction="#registrarUsuario" text="Registrar" />
+      <Button layoutX="334.0" layoutY="294.0" mnemonicParsing="false" onAction="#volverLogin" text="Volver al Login" />
+      <TextArea fx:id="usuarioOK" layoutX="166.0" layoutY="346.0" prefHeight="40.0" prefWidth="267.0" />
    </children>
 </AnchorPane>

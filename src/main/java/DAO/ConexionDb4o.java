@@ -7,7 +7,7 @@ import com.db4o.ObjectContainer;
 public class ConexionDb4o {
 
     //Nombre del archivo donde guardo mi bd
-    static final String DB_FILE = "petcare.db4o";
+    static final String DB_FILE = "comunidadProgramadores.db4o";
 
     public ObjectContainer abrirConexion(){
 

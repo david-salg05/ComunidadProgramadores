@@ -10,6 +10,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.Region;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -24,6 +25,7 @@ public class Login_Controller {
     @FXML
     TextField idContrasenhaLogin;
 
+    //Funcion que se ejecuta al presionar el boton de login
     public void login(ActionEvent actionEvent) throws IOException {
 
         //Variables
@@ -33,8 +35,11 @@ public class Login_Controller {
         //Creo la alerta
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("ERROR");
-        alert.getDialogPane().setMaxHeight(50);
-        alert.getDialogPane().setMaxWidth(3000);
+
+        //Aplico un tamaño a la alerta
+        alert.getDialogPane().setPrefWidth(450);
+        alert.getDialogPane().setMinHeight(Region.USE_PREF_SIZE);
+        alert.getDialogPane().setMinWidth(450);
 
         //Compruebo los requisitos de nombre
         if(nombre.isEmpty()){
@@ -70,8 +75,9 @@ public class Login_Controller {
             return;
         }
 
-
+        //Compruebo que el usuario que intenta loguearse está registrado en la bd
         if(ProgramadoresDAO.existeUsuario(nombre)){
+            //Abro la ventana de inicio
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("inicio.fxml"));
             Scene scene = new Scene(fxmlLoader.load(), 600, 450);
             Stage stage = (Stage)((Node)(actionEvent.getSource())).getScene().getWindow();
@@ -80,6 +86,7 @@ public class Login_Controller {
             stage.setScene(scene);
             stage.show();
         }else{
+            //Muestro un mensaje de error
             alert.setContentText("El usuario introducido aún no existe en la bd, debes registrarte primero");
             alert.showAndWait();
             return;
@@ -87,6 +94,15 @@ public class Login_Controller {
 
     }
 
-    public void registrarse(ActionEvent actionEvent) {
+    //Funcion que se ejecuta al presionar el boton de registrarse
+    public void registrarse(ActionEvent actionEvent) throws IOException {
+
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("registro.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 600, 450);
+        Stage stage = (Stage)((Node)(actionEvent.getSource())).getScene().getWindow();
+
+        stage.setTitle("Registro de usuario");
+        stage.setScene(scene);
+        stage.show();
     }
 }
