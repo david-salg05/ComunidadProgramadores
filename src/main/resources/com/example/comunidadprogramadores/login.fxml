@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/" fx:controller="com.example.comunidadprogramadores.Login_Controller">
+   <children>
+      <Label layoutX="215.0" layoutY="33.0" prefHeight="28.0" prefWidth="170.0" text="Comunidad de programadores " />
+      <VBox layoutX="113.0" layoutY="107.0" prefHeight="200.0" prefWidth="386.0">
+         <children>
+            <HBox prefHeight="58.0" prefWidth="386.0">
+               <children>
+                  <Label prefHeight="33.0" prefWidth="89.0" text="Usuario: " />
+                  <TextField fx:id="idUsuarioLogin" prefHeight="32.0" prefWidth="204.0" />
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="10.0" prefHeight="97.0" prefWidth="344.0">
+               <children>
+                  <Label prefHeight="33.0" prefWidth="89.0" text="Contraseña:" />
+                  <TextField fx:id="idContrasenhaLogin" prefHeight="32.0" prefWidth="204.0" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <Button layoutX="113.0" layoutY="307.0" mnemonicParsing="false" onAction="#login" text="Login" />
+      <Button layoutX="345.0" layoutY="307.0" mnemonicParsing="false" onAction="#registrarse" text="Registrarse" />
+   </children>
+</AnchorPane>
