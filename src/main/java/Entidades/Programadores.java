@@ -15,4 +15,7 @@ public class Programadores {
     private String contrasenha;
     private String genero;
     private String lenguaje;
+
+    public void setç() {
+    }
 }

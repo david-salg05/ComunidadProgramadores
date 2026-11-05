@@ -30,14 +30,14 @@ public class Registro_Controller {
     RadioButton hombre, mujer, pnd;
 
     @FXML
-    TextArea usuarioOK;
+    Label usuarioOK;
 
     @FXML
     public void initialize(){
         comboBox.getItems().addAll("Java", "Python", "JavaScript");
     }
 
-    public void registrarUsuario(ActionEvent actionEvent){
+    public void registrarUsuario(ActionEvent actionEvent) throws IOException {
         //Variables
         String nombre = regUsu.getText();
         String contrasenha = regContr.getText();
@@ -116,7 +116,19 @@ public class Registro_Controller {
         }else{
             Programadores p = new Programadores(nombre,contrasenha,sexo,lenguaje);
             ProgramadoresDAO.registrarUsuario(p);
-            usuarioOK.setText("Usuario registrado correctamente!");
+
+            //Imprimo mensaje de que se ha registrad ocorrectamente
+            alert.setContentText("Usuario registrado correctamente!");
+            alert.showAndWait();
+
+            //Vuelvo al menu de login
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("login.fxml"));
+            Scene scene = new Scene(fxmlLoader.load(), 600, 450);
+            Stage stage = (Stage)((Node)(actionEvent.getSource())).getScene().getWindow();
+
+            stage.setTitle("Comunidad de programadores");
+            stage.setScene(scene);
+            stage.show();
         }
     }
 

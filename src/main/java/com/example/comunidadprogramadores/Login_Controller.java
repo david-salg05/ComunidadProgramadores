@@ -76,7 +76,7 @@ public class Login_Controller {
         }
 
         //Compruebo que el usuario que intenta loguearse está registrado en la bd
-        if(ProgramadoresDAO.existeUsuario(nombre)){
+        if(ProgramadoresDAO.UsuarioValido(nombre, contrasenha)){
             //Abro la ventana de inicio
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("inicio.fxml"));
             Scene scene = new Scene(fxmlLoader.load(), 600, 450);
@@ -87,11 +87,9 @@ public class Login_Controller {
             stage.show();
         }else{
             //Muestro un mensaje de error
-            alert.setContentText("El usuario introducido aún no existe en la bd, debes registrarte primero");
+            alert.setContentText("Usuario y/o contraseña incorrectos. Vuelva a intentarlo");
             alert.showAndWait();
-            return;
         }
-
     }
 
     //Funcion que se ejecuta al presionar el boton de registrarse

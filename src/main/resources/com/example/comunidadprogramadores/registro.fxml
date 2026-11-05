@@ -45,6 +45,5 @@
       </VBox>
       <Button layoutX="135.0" layoutY="294.0" mnemonicParsing="false" onAction="#registrarUsuario" text="Registrar" />
       <Button layoutX="334.0" layoutY="294.0" mnemonicParsing="false" onAction="#volverLogin" text="Volver al Login" />
-      <TextArea fx:id="usuarioOK" layoutX="166.0" layoutY="346.0" prefHeight="40.0" prefWidth="267.0" />
    </children>
 </AnchorPane>

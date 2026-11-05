@@ -9,23 +9,23 @@ public class ProgramadoresDAO {
     //Hago la conexion global con la base de datos
     static ConexionDb4o conexionBD = new ConexionDb4o();
 
-    //Funcion que comprueba si ya existe el nombre de usuario pasado como parametro
-    public static boolean existeUsuario(String nombreUsuario) {
-
+    //Funcion que comprueba el usuario y la contraseña de un programador
+    public static boolean UsuarioValido(String nombreUsuario, String contrasenha) {
         // Abro la bd
         ObjectContainer bd = conexionBD.abrirConexion();
 
-        // Abro la lista de usuarios
-        ObjectSet<Programadores> listaProgramadores = bd.query(Programadores.class);
+        //Creo el programador con los datos pasados como parametro
+        Programadores pr = new Programadores();
+        pr.setNombre(nombreUsuario);
+        pr.setContrasenha(contrasenha);
+
+        //Miro si los datos coinciden con los que hay en la bd
+        ObjectSet<Programadores> buscarProgramador = bd.queryByExample(pr);
 
         boolean existe = false;
 
-        // Recorro la lista
-        for (Programadores p : listaProgramadores) {
-            if (p.getNombre().equalsIgnoreCase(nombreUsuario)) {
-                existe = true;
-                break;
-            }
+        if(buscarProgramador.hasNext()){
+            existe = true;
         }
 
         // Cierro la bd
@@ -44,5 +44,29 @@ public class ProgramadoresDAO {
 
         //Cierro la bd
         bd.close();
+    }
+
+    //Funcion que comprueba si un usuario esta dado de alta en la bd
+    public static boolean existeUsuario(String usuario){
+        // Abro la bd
+        ObjectContainer bd = conexionBD.abrirConexion();
+
+        //Creo el programador con los datos pasados como parametro
+        Programadores pr = new Programadores();
+        pr.setNombre(usuario);
+
+        //Miro si los datos coinciden con los que hay en la bd
+        ObjectSet<Programadores> buscarProgramador = bd.queryByExample(pr);
+
+        boolean existe = false;
+
+        if(buscarProgramador.hasNext()){
+            existe = true;
+        }
+
+        // Cierro la bd
+        bd.close();
+
+        return existe;
     }
 }
