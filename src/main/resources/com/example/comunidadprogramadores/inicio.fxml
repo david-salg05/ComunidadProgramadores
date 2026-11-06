@@ -13,14 +13,14 @@
             <ComboBox fx:id="comboBox" prefHeight="25.0" prefWidth="152.0" />
          </children>
       </HBox>
-      <TableView layoutX="109.0" layoutY="146.0" prefHeight="163.0" prefWidth="347.0">
+      <TableView fx:id="tabla" layoutX="109.0" layoutY="146.0" prefHeight="163.0" prefWidth="347.0">
         <columns>
-          <TableColumn prefWidth="121.33334350585938" text="USUARIO" />
-          <TableColumn prefWidth="108.6666259765625" text="GÉNERO" />
-            <TableColumn prefWidth="116.33331298828125" text="LENGUAJE" />
+          <TableColumn fx:id="colUsuario" prefWidth="121.33334350585938" text="USUARIO" />
+          <TableColumn fx:id="colGenero" prefWidth="108.6666259765625" text="GÉNERO" />
+            <TableColumn fx:id="colLenguaje" prefWidth="116.33331298828125" text="LENGUAJE" />
         </columns>
       </TableView>
-      <Button layoutX="47.0" layoutY="328.0" mnemonicParsing="false" text="Editar perfil" />
+      <Button layoutX="47.0" layoutY="328.0" mnemonicParsing="false" onAction="#editarPerfil" text="Editar perfil" />
       <Button layoutX="165.0" layoutY="327.0" mnemonicParsing="false" text="EXCEL" />
       <Button layoutX="264.0" layoutY="327.0" mnemonicParsing="false" text="PDF" />
    </children>
