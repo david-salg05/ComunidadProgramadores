@@ -69,4 +69,34 @@ public class ProgramadoresDAO {
 
         return existe;
     }
+
+    //Funcion que modifica contraseña, genero y lenguaje de un programador existente
+    public static boolean modificarUsuario(String nombreUsuario, String contrasenha, String genero, String lenguaje) {
+        //Abro la conexion con la bd
+        ObjectContainer bd = conexionBD.abrirConexion();
+        boolean modificado = false;
+
+        //Busco al programador por nombre
+        Programadores progBuscar = new Programadores();
+        progBuscar.setNombre(nombreUsuario);
+
+        ObjectSet<Programadores> resultado = bd.queryByExample(progBuscar);
+
+        if (resultado.hasNext()) {
+            Programadores p = resultado.next();
+            p.setContrasenha(contrasenha);
+            p.setGenero(genero);
+            p.setLenguaje(lenguaje);
+
+            //Guardo y actualizo el usuario modificado
+            bd.store(p);
+            bd.commit();
+            modificado = true;
+        }
+
+        //Cierro la bd
+        bd.close();
+
+        return modificado;
+    }
 }

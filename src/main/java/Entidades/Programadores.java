@@ -16,6 +16,6 @@ public class Programadores {
     private String genero;
     private String lenguaje;
 
-    public void setç() {
+    public void set() {
     }
 }

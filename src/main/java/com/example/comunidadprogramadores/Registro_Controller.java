@@ -30,9 +30,6 @@ public class Registro_Controller {
     RadioButton hombre, mujer, pnd;
 
     @FXML
-    Label usuarioOK;
-
-    @FXML
     public void initialize(){
         comboBox.getItems().addAll("Java", "Python", "JavaScript");
     }
