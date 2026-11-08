@@ -74,6 +74,7 @@ public class ProgramadoresDAO {
     public static boolean modificarUsuario(String nombreUsuario, String contrasenha, String genero, String lenguaje) {
         //Abro la conexion con la bd
         ObjectContainer bd = conexionBD.abrirConexion();
+
         boolean modificado = false;
 
         //Busco al programador por nombre
@@ -98,5 +99,25 @@ public class ProgramadoresDAO {
         bd.close();
 
         return modificado;
+    }
+
+    //Funcion que devuelve todos los datos de un programador
+    public static Programadores obtenerUsuario(String nombreUsuario) {
+        //Abro la conexion con la bd
+        ObjectContainer bd = conexionBD.abrirConexion();
+
+        //Creo un programador y le asigno el nombre de usuario pasado como parametro
+        Programadores pr = new Programadores();
+        pr.setNombre(nombreUsuario);
+
+        //Busco el programador y lo devuelvo con toda su informacion
+        ObjectSet<Programadores> res = bd.queryByExample(pr);
+        Programadores encontrado = null;
+        if (res.hasNext()) {
+            encontrado = res.next();
+        }
+
+        bd.close();
+        return encontrado;
     }
 }

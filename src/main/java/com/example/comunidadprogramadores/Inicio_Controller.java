@@ -35,8 +35,12 @@ public class Inicio_Controller {
     @FXML
     TableColumn<Programadores, String> colLenguaje;
 
-    //Guardo la elección del lenguaje para filtrar
-    //String lenguaje = comboBox.getValue();
+    //Usuario que ha iniciado sesión
+    String usuario;
+
+    public void recibirDatos(String usuario) {
+        this.usuario = usuario;
+    }
 
     public void cerrarSesion(ActionEvent actionEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("login.fxml"));
@@ -53,6 +57,11 @@ public class Inicio_Controller {
 
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("editarPerfil.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 600, 450);
+
+        //Le paso los datos a editarPerfil
+        EditarPerfil_Controller ep = fxmlLoader.getController();
+        ep.cargarDatos(usuario);
+
         Stage stage = (Stage)((Node)(actionEvent.getSource())).getScene().getWindow();
 
         stage.setTitle("Editar Perfil");

@@ -38,7 +38,7 @@
             </HBox>
          </children>
       </VBox>
-      <Button layoutX="112.0" layoutY="307.0" mnemonicParsing="false" text="Guardar Cambios" />
-      <Button layoutX="389.0" layoutY="307.0" mnemonicParsing="false" text="Cancelar" />
+      <Button layoutX="112.0" layoutY="307.0" mnemonicParsing="false" onAction="#guardarCambios" text="Guardar Cambios" />
+      <Button layoutX="389.0" layoutY="307.0" mnemonicParsing="false" onAction="#cancelar" text="Cancelar" />
    </children>
 </AnchorPane>

@@ -80,6 +80,11 @@ public class Login_Controller {
             //Abro la ventana de inicio
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("inicio.fxml"));
             Scene scene = new Scene(fxmlLoader.load(), 600, 450);
+
+            //Le paso a Inicio el usuario que ha iniciado sesión
+            Inicio_Controller ic = fxmlLoader.getController();
+            ic.recibirDatos(nombre);
+
             Stage stage = (Stage)((Node)(actionEvent.getSource())).getScene().getWindow();
 
             stage.setTitle("Comunidad de programadores");
