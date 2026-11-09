@@ -64,12 +64,12 @@ public class Login_Controller {
             alert.showAndWait();
             return;
         }
-        if(contrasenha.equals(contrasenha.toLowerCase(Locale.ROOT))){
+        if(contrasenha.equals(contrasenha.toLowerCase())){
             alert.setContentText("La contraseña es incorrecta. Debe contener al menos una letra mayúscula");
             alert.showAndWait();
             return;
         }
-        if(contrasenha.equals(contrasenha.toUpperCase(Locale.ROOT))){
+        if(contrasenha.equals(contrasenha.toUpperCase())){
             alert.setContentText("La contraseña es incorrecta. Debe contener al menos una letra minúscula");
             alert.showAndWait();
             return;

@@ -4,6 +4,8 @@ import Entidades.Programadores;
 import com.db4o.ObjectContainer;
 import com.db4o.ObjectSet;
 
+import java.util.ArrayList;
+
 public class ProgramadoresDAO {
 
     //Hago la conexion global con la base de datos
@@ -119,5 +121,38 @@ public class ProgramadoresDAO {
 
         bd.close();
         return encontrado;
+    }
+
+    //Funcion que devuelve de la bd la informacion de todos los usuarios con un lenguaje pasado por parametro
+    public static ArrayList<Programadores> devolverLista(String lenguaje){
+        //Creo el arrayList
+        ArrayList<Programadores> lista = new ArrayList<>();
+
+        //Abro la conexion con la bd
+        ObjectContainer bd = conexionBD.abrirConexion();
+
+        //Si el elnguaje es TODOS, devuelvo la lista entera de los programadores
+        if(lenguaje.equalsIgnoreCase("Todos")){
+            lista = new ArrayList<>(bd.query(Programadores.class));
+        }else{
+            //Creo un programador y le asigno el nombre de usuario pasado como parametro
+            Programadores pr = new Programadores();
+            pr.setLenguaje(lenguaje);
+
+            //Busco el programador y lo añado a la lista
+            ObjectSet<Programadores> res = bd.queryByExample(pr);
+
+            //Voy guardando en la lista todos los usuarios con esa condicion
+            if (res.hasNext()) {
+                for(Programadores p : res){
+                    lista.add(p);
+                }
+            }
+        }
+
+        //Cierro la base de datos
+        bd.close();
+
+        return lista;
     }
 }
