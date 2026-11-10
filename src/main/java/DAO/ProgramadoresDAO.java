@@ -112,6 +112,7 @@ public class ProgramadoresDAO {
         Programadores pr = new Programadores();
         pr.setNombre(nombreUsuario);
 
+
         //Busco el programador y lo devuelvo con toda su informacion
         ObjectSet<Programadores> res = bd.queryByExample(pr);
         Programadores encontrado = null;

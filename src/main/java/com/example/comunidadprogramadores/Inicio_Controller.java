@@ -14,10 +14,9 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.Region;
 import javafx.stage.Stage;
 
 import java.io.FileNotFoundException;
@@ -43,6 +42,9 @@ public class Inicio_Controller {
     TableColumn<Programadores, String> colLenguaje;
 
     @FXML
+    Label mensaje;
+
+    @FXML
     public void initialize(){
         comboBox.getItems().addAll("Todos","Java", "Python", "JavaScript");
 
@@ -50,6 +52,12 @@ public class Inicio_Controller {
         colUsuario.setCellValueFactory(new PropertyValueFactory<>("nombre"));
         colGenero.setCellValueFactory(new PropertyValueFactory<>("genero"));
         colLenguaje.setCellValueFactory(new PropertyValueFactory<>("lenguaje"));
+
+        //Selecciono TODOS por defecto
+        comboBox.setValue("Todos");
+
+        //Pongo la funcion a null para que cargue TODOS
+        elegirLenguaje(null);
     }
 
     //Usuario que ha iniciado sesión
@@ -57,9 +65,12 @@ public class Inicio_Controller {
 
     public void recibirDatos(String usuario) {
         this.usuario = usuario;
+
+        // Muestro el nombre del usuario que ha iniciado sesión
+        mensaje.setText("Bienvenido/a, " + usuario);
     }
 
-    public void elegirLenguaje(){
+    public void elegirLenguaje(ActionEvent actionEvent){
 
         // Guardo el lenguaje elegido en el comboBox
         String lenguaje = comboBox.getValue();
@@ -103,17 +114,64 @@ public class Inicio_Controller {
     }
 
     public void generarPDF(ActionEvent actionEvent){
+        //Creo la alerta
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("NOTIFICACIÓN");
+
+        //Aplico un tamaño a la alerta
+        alert.getDialogPane().setPrefWidth(450);
+        alert.getDialogPane().setMinHeight(Region.USE_PREF_SIZE);
+        alert.getDialogPane().setMinWidth(450);
+
         // Obtengo los programadores que aparecen en la tabla
         ArrayList<Programadores> lista = new ArrayList<>(tabla.getItems());
 
         try {
 
+            //Genero el pdf
             GenerarPDF.crearPDF(lista);
+
+            //Muestro la alerta
+            alert.setContentText("PDF creado correctamente");
+            alert.showAndWait();
 
         } catch (Exception e) {
 
-            System.out.println("Hubo un error");
+            //MUestro una alerta de error
+            alert.setContentText("Error al crear el PDF, vuelva a intentarlo");
+            alert.showAndWait();
+        }
+    }
 
+
+    public void generarExcel(ActionEvent actionEvent) {
+
+        //Creo la alerta
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("NOTIFICACIÓN");
+
+        //Aplico un tamaño a la alerta
+        alert.getDialogPane().setPrefWidth(450);
+        alert.getDialogPane().setMinHeight(Region.USE_PREF_SIZE);
+        alert.getDialogPane().setMinWidth(450);
+
+        // Obtengo los programadores que aparecen en la tabla
+        ArrayList<Programadores> lista = new ArrayList<>(tabla.getItems());
+
+        try {
+
+            // Genero el Excel
+            GenerarExcel.crearExcel(lista);
+
+            //Muestro la alerta
+            alert.setContentText("Excel creado correctamente");
+            alert.showAndWait();
+
+        } catch (Exception e) {
+
+            //MUestro una alerta de error
+            alert.setContentText("Error al crear el PDF, vuelva a intentarlo");
+            alert.showAndWait();
         }
     }
 }

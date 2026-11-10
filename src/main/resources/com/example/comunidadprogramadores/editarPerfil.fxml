@@ -17,7 +17,7 @@
             <HBox layoutX="10.0" layoutY="10.0" prefHeight="50.0" prefWidth="414.0">
                <children>
                   <Label prefHeight="22.0" prefWidth="140.0" text="Contraseña:" />
-                  <TextField fx:id="contrasenha" prefHeight="28.0" prefWidth="143.0" />
+                  <TextField fx:id="contrasenha" prefHeight="28.0" prefWidth="143.0" promptText="Nueva contraseña" />
                </children>
             </HBox>
             <HBox prefHeight="53.0" prefWidth="414.0">
@@ -33,7 +33,7 @@
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
                   <Label prefHeight="15.0" prefWidth="166.0" text="Lenguaje de programacion: " />
-                  <ComboBox fx:id="comboBox" prefWidth="150.0" />
+                  <ComboBox fx:id="comboBox" prefWidth="150.0" promptText="Selecciona Lenguaje" />
                </children>
             </HBox>
          </children>

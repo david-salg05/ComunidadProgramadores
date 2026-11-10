@@ -5,12 +5,12 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comunidadprogramadores.Inicio_Controller">
    <children>
-      <Label layoutX="264.0" layoutY="26.0" prefHeight="35.0" prefWidth="71.0" text="Bienvenidos" />
+      <Label fx:id="mensaje" layoutX="214.0" layoutY="25.0" prefHeight="35.0" prefWidth="152.0" />
       <Button layoutX="443.0" layoutY="61.0" mnemonicParsing="false" onAction="#cerrarSesion" text="Cerrar Sesión" />
       <HBox layoutX="79.0" layoutY="103.0" prefHeight="35.0" prefWidth="442.0">
          <children>
             <Label prefHeight="23.0" prefWidth="136.0" text="Filtrar por lenguaje: " />
-            <ComboBox fx:id="comboBox" onAction="#elegirLenguaje" prefHeight="25.0" prefWidth="152.0" />
+            <ComboBox fx:id="comboBox" onAction="#elegirLenguaje" prefHeight="25.0" prefWidth="152.0" promptText="Selecciona lenguaje" />
          </children>
       </HBox>
       <TableView fx:id="tabla" layoutX="53.0" layoutY="139.0" prefHeight="170.0" prefWidth="442.0">
@@ -21,7 +21,7 @@
         </columns>
       </TableView>
       <Button layoutX="47.0" layoutY="328.0" mnemonicParsing="false" onAction="#editarPerfil" text="Editar perfil" />
-      <Button layoutX="165.0" layoutY="327.0" mnemonicParsing="false" text="EXCEL" />
+      <Button layoutX="165.0" layoutY="327.0" mnemonicParsing="false" onAction="#generarExcel" text="EXCEL" />
       <Button layoutX="264.0" layoutY="327.0" mnemonicParsing="false" onAction="#generarPDF" text="PDF" />
    </children>
 </AnchorPane>

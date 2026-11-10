@@ -19,23 +19,29 @@ public class GenerarPDF {
 
     public static void crearPDF(ArrayList<Programadores> lista) throws Exception {
 
+        //Creo el documento y le doy el nombre
         Document documento = new Document();
-
         PdfWriter.getInstance(documento, new FileOutputStream("programadores.pdf"));
 
+        //Abro el documento
         documento.open();
 
+        //Escribo el titulo del documento
         documento.add(new Paragraph("Listado de programadores"));
         documento.add(new Paragraph("\n\n\n"));
 
+        //Creo una tabla con las 3 columnas
         PdfPTable tabla = new PdfPTable(3);
 
+        //Indico el tipo de letra
         Font negrita = new Font(Font.HELVETICA, 12, Font.BOLD);
 
+        //Anhado las cabeceras de la tabla
         tabla.addCell(new PdfPCell(new Phrase("Usuario", negrita)));
         tabla.addCell(new PdfPCell(new Phrase("Genero", negrita)));
         tabla.addCell(new PdfPCell(new Phrase("Lenguaje", negrita)));
 
+        //Bucle para añadir a la tabla cada programador
         for (Programadores p : lista) {
 
             tabla.addCell(p.getNombre());
@@ -44,8 +50,10 @@ public class GenerarPDF {
 
         }
 
+        //Anhado la tabla al documento
         documento.add(tabla);
 
+        //Cierro el documento
         documento.close();
     }
 }
