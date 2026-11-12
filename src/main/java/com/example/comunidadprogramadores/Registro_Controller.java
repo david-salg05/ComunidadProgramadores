@@ -105,7 +105,7 @@ public class Registro_Controller {
             lenguaje = comboBox.getValue();
         }
 
-        //Compruebo que el nombre de usuario estea disponible
+        //Compruebo que el nombre de usuario este disponible
         if(ProgramadoresDAO.existeUsuario(nombre)){
             alert.setContentText("El nombre de usuario ya está registrado en la bd, introduzca otro diferente.");
             alert.showAndWait();

@@ -1,0 +1,55 @@
+/* Fondo de la ventana */
+.root {
+    -fx-background-color: #E8F1F2;
+}
+
+/* Estilo de todas las etiquetas */
+.label {
+    -fx-text-fill: #13293D;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+    -fx-min-width: 100px;
+}
+
+/* Titulo principal */
+#titulo {
+    -fx-background-color: #13293D;
+    -fx-background-radius: 20;
+    -fx-text-fill: white;
+    -fx-font-size: 22px;
+    -fx-font-family: "Georgia";
+    -fx-font-weight: bold;
+    -fx-alignment: center;
+}
+
+/* Estilo de todos los botones */
+.button {
+    -fx-background-color: #1B998B;
+    -fx-background-radius: 20;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-border-color: #1B998B;
+    -fx-border-radius: 20;
+}
+
+/* Estilo de los botones al pasar el raton  */
+.button:hover {
+    -fx-background-color: white;
+    -fx-text-fill: #1B998B;
+}
+
+/* cabecera de la tabla */
+.table-view .column-header,
+.table-view .filler {
+    -fx-background-color: #13293D;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: white;
+    -fx-alignment: center;
+}
+
+/* contenido de la tabla centrado */
+.table-cell {
+    -fx-alignment: center;
+}

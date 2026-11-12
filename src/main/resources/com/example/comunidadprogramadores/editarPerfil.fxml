@@ -3,42 +3,42 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comunidadprogramadores.EditarPerfil_Controller">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@../../../CSS/estilos.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comunidadprogramadores.EditarPerfil_Controller">
    <children>
-      <Label layoutX="138.0" layoutY="63.0" prefHeight="39.0" prefWidth="79.0" text="Editar Perfil" />
-      <VBox layoutX="138.0" layoutY="100.0" prefHeight="200.0" prefWidth="414.0">
+      <Label id="titulo" layoutX="206.0" layoutY="39.0" prefHeight="39.0" prefWidth="199.0" text="Editar Perfil" />
+      <VBox layoutX="112.0" layoutY="100.0" prefHeight="200.0" prefWidth="414.0">
          <children>
             <HBox prefHeight="50.0" prefWidth="414.0">
                <children>
-                  <Label prefHeight="22.0" prefWidth="140.0" text="Nombre de usuario:" />
+                  <Label id="label" prefHeight="22.0" prefWidth="140.0" text="Nombre de usuario:" />
                   <TextField fx:id="nombreUsuario" prefHeight="22.0" prefWidth="143.0" />
                </children>
             </HBox>
             <HBox layoutX="10.0" layoutY="10.0" prefHeight="50.0" prefWidth="414.0">
                <children>
-                  <Label prefHeight="22.0" prefWidth="140.0" text="Contraseña:" />
+                  <Label id="label" prefHeight="22.0" prefWidth="140.0" text="Contraseña:" />
                   <TextField fx:id="contrasenha" prefHeight="28.0" prefWidth="143.0" promptText="Nueva contraseña" />
                </children>
             </HBox>
             <HBox prefHeight="53.0" prefWidth="414.0">
                <children>
-                  <Label prefHeight="24.0" prefWidth="137.0" text="Género: " />
-                  <RadioButton fx:id="hombre" mnemonicParsing="false" prefHeight="17.0" prefWidth="78.0" text="Hombre">
+                  <Label id="label" prefHeight="24.0" prefWidth="137.0" text="Género: " />
+                  <RadioButton id="label" fx:id="hombre" mnemonicParsing="false" prefHeight="23.0" prefWidth="95.0" text="Hombre">
                      <toggleGroup>
                         <ToggleGroup fx:id="sexo" />
                      </toggleGroup></RadioButton>
-                  <RadioButton fx:id="mujer" mnemonicParsing="false" prefHeight="17.0" prefWidth="65.0" text="Mujer" toggleGroup="$sexo" />
-                  <RadioButton fx:id="pnd" mnemonicParsing="false" text="Prefiero no decirlo" toggleGroup="$sexo" />
+                  <RadioButton id="label" fx:id="mujer" mnemonicParsing="false" prefHeight="20.0" prefWidth="75.0" text="Mujer" toggleGroup="$sexo" />
+                  <RadioButton id="label" fx:id="pnd" mnemonicParsing="false" prefHeight="19.0" prefWidth="146.0" text="Prefiero no decirlo" toggleGroup="$sexo" />
                </children></HBox>
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Label prefHeight="15.0" prefWidth="166.0" text="Lenguaje de programacion: " />
-                  <ComboBox fx:id="comboBox" prefWidth="150.0" promptText="Selecciona Lenguaje" />
+                  <Label id="label" prefHeight="18.0" prefWidth="178.0" text="Lenguaje de programacion: " />
+                  <ComboBox fx:id="comboBox" prefHeight="30.0" prefWidth="189.0" promptText="Selecciona Lenguaje" />
                </children>
             </HBox>
          </children>
       </VBox>
-      <Button layoutX="112.0" layoutY="307.0" mnemonicParsing="false" onAction="#guardarCambios" text="Guardar Cambios" />
-      <Button layoutX="389.0" layoutY="307.0" mnemonicParsing="false" onAction="#cancelar" text="Cancelar" />
+      <Button id="button" layoutX="139.0" layoutY="300.0" mnemonicParsing="false" onAction="#guardarCambios" text="Guardar Cambios" />
+      <Button id="button" layoutX="347.0" layoutY="300.0" mnemonicParsing="false" onAction="#cancelar" text="Cancelar" />
    </children>
 </AnchorPane>

@@ -1,28 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comunidadprogramadores.Registro_Controller">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@../../../CSS/estilos.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comunidadprogramadores.Registro_Controller">
    <children>
-      <Label layoutX="250.0" layoutY="14.0" prefHeight="36.0" prefWidth="100.0" text="Registro usuarios" />
+      <Label id="titulo" layoutX="175.0" layoutY="14.0" prefHeight="36.0" prefWidth="250.0" text="Registro usuarios" />
       <VBox layoutX="114.0" layoutY="73.0" prefHeight="200.0" prefWidth="371.0">
          <children>
             <HBox prefHeight="43.0" prefWidth="371.0">
                <children>
-                  <Label prefHeight="22.0" prefWidth="129.0" text="Nombre de usuario:" />
+                  <Label id="label" prefHeight="22.0" prefWidth="129.0" text="Nombre de usuario:" />
                   <TextField fx:id="regUsu" prefHeight="25.0" prefWidth="186.0" promptText="Introduce el nombre de usuario" />
                </children>
             </HBox>
             <HBox layoutX="10.0" layoutY="10.0" prefHeight="38.0" prefWidth="371.0">
                <children>
-                  <Label prefHeight="22.0" prefWidth="129.0" text="Contraseña:" />
+                  <Label id="label" prefHeight="22.0" prefWidth="129.0" text="Contraseña:" />
                   <TextField fx:id="regContr" prefHeight="25.0" prefWidth="149.0" promptText="Introduce la contraseña" />
                </children>
             </HBox>
             <HBox layoutX="10.0" layoutY="53.0" prefHeight="82.0" prefWidth="371.0">
                <children>
-                  <Label prefHeight="22.0" prefWidth="129.0" text="Género:" />
+                  <Label id="label" prefHeight="22.0" prefWidth="129.0" text="Género:" />
                   <VBox prefHeight="82.0" prefWidth="158.0">
                      <children>
                         <RadioButton fx:id="hombre" mnemonicParsing="false" prefHeight="19.0" prefWidth="87.0" text="Hombre">
@@ -37,13 +38,17 @@
             </HBox>
             <HBox layoutX="10.0" layoutY="53.0" prefHeight="38.0" prefWidth="371.0">
                <children>
-                  <Label fx:id="label" prefHeight="36.0" prefWidth="126.0" text="Lenguaje de &#10;programación: " />
+                  <Label id="label" fx:id="label" prefHeight="36.0" prefWidth="126.0" text="Lenguaje de &#10;programación: " />
                   <ComboBox fx:id="comboBox" prefHeight="25.0" prefWidth="154.0" promptText="Selecciona lenguaje" />
                </children>
             </HBox>
          </children>
       </VBox>
-      <Button layoutX="135.0" layoutY="294.0" mnemonicParsing="false" onAction="#registrarUsuario" text="Registrar" />
-      <Button layoutX="334.0" layoutY="294.0" mnemonicParsing="false" onAction="#volverLogin" text="Volver al Login" />
+      <Button id="button" layoutX="135.0" layoutY="294.0" mnemonicParsing="false" onAction="#registrarUsuario" text="Registrar" />
+      <Button id="button" layoutX="334.0" layoutY="294.0" mnemonicParsing="false" onAction="#volverLogin" text="Volver al Login" />
+      <ImageView fitHeight="103.0" fitWidth="96.0" layoutX="419.0" layoutY="130.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Imagenes/anhadirUsuario.jpg" />
+         </image></ImageView>
    </children>
 </AnchorPane>

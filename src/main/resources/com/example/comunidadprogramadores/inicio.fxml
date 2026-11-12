@@ -3,25 +3,25 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comunidadprogramadores.Inicio_Controller">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@../../../CSS/estilos.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comunidadprogramadores.Inicio_Controller">
    <children>
-      <Label fx:id="mensaje" layoutX="214.0" layoutY="25.0" prefHeight="35.0" prefWidth="152.0" />
+      <Label id="titulo" fx:id="mensaje" layoutX="42.0" layoutY="25.0" prefHeight="35.0" prefWidth="380.0" />
       <Button layoutX="443.0" layoutY="61.0" mnemonicParsing="false" onAction="#cerrarSesion" text="Cerrar Sesión" />
       <HBox layoutX="79.0" layoutY="103.0" prefHeight="35.0" prefWidth="442.0">
          <children>
-            <Label prefHeight="23.0" prefWidth="136.0" text="Filtrar por lenguaje: " />
+            <Label id="label" prefHeight="23.0" prefWidth="136.0" text="Filtrar por lenguaje: " />
             <ComboBox fx:id="comboBox" onAction="#elegirLenguaje" prefHeight="25.0" prefWidth="152.0" promptText="Selecciona lenguaje" />
          </children>
       </HBox>
-      <TableView fx:id="tabla" layoutX="53.0" layoutY="139.0" prefHeight="170.0" prefWidth="442.0">
+      <TableView fx:id="tabla" layoutX="80.0" layoutY="138.0" prefHeight="170.0" prefWidth="442.0">
         <columns>
           <TableColumn fx:id="colUsuario" prefWidth="152.99999237060547" text="USUARIO" />
           <TableColumn fx:id="colGenero" prefWidth="156.66668701171875" text="GÉNERO" />
             <TableColumn fx:id="colLenguaje" prefWidth="131.99996948242188" text="LENGUAJE" />
         </columns>
       </TableView>
-      <Button layoutX="47.0" layoutY="328.0" mnemonicParsing="false" onAction="#editarPerfil" text="Editar perfil" />
-      <Button layoutX="165.0" layoutY="327.0" mnemonicParsing="false" onAction="#generarExcel" text="EXCEL" />
-      <Button layoutX="264.0" layoutY="327.0" mnemonicParsing="false" onAction="#generarPDF" text="PDF" />
+      <Button id="button" layoutX="80.0" layoutY="327.0" mnemonicParsing="false" onAction="#editarPerfil" text="Editar perfil" />
+      <Button id="button" layoutX="279.0" layoutY="327.0" mnemonicParsing="false" onAction="#generarExcel" text="EXCEL" />
+      <Button id="button" layoutX="448.0" layoutY="327.0" mnemonicParsing="false" onAction="#generarPDF" text="PDF" />
    </children>
 </AnchorPane>

@@ -3,26 +3,26 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comunidadprogramadores.Login_Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@../../../CSS/estilos.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comunidadprogramadores.Login_Controller">
    <children>
-      <Label layoutX="215.0" layoutY="33.0" prefHeight="28.0" prefWidth="170.0" text="Comunidad de programadores " />
-      <VBox layoutX="113.0" layoutY="107.0" prefHeight="200.0" prefWidth="386.0">
+      <Label id="titulo" layoutX="107.0" layoutY="32.0" prefHeight="28.0" prefWidth="386.0" text="Comunidad de programadores " />
+      <VBox layoutX="136.0" layoutY="109.0" prefHeight="159.0" prefWidth="386.0">
          <children>
             <HBox prefHeight="58.0" prefWidth="386.0">
                <children>
-                  <Label prefHeight="33.0" prefWidth="89.0" text="Usuario: " />
+                  <Label id="label" prefHeight="33.0" prefWidth="89.0" text="Usuario: " />
                   <TextField fx:id="idUsuarioLogin" prefHeight="32.0" prefWidth="204.0" promptText="Introduce tu usuario (Min. 5 caract)" />
                </children>
             </HBox>
             <HBox layoutX="10.0" layoutY="10.0" prefHeight="97.0" prefWidth="344.0">
                <children>
-                  <Label prefHeight="33.0" prefWidth="89.0" text="Contraseña:" />
+                  <Label id="label" prefHeight="33.0" prefWidth="89.0" text="Contraseña:" />
                   <TextField fx:id="idContrasenhaLogin" prefHeight="32.0" prefWidth="204.0" promptText="Introduce tu contraseña" />
                </children>
             </HBox>
          </children>
       </VBox>
-      <Button layoutX="113.0" layoutY="307.0" mnemonicParsing="false" onAction="#login" text="Login" />
-      <Button layoutX="345.0" layoutY="307.0" mnemonicParsing="false" onAction="#registrarse" text="Registrarse" />
+      <Button id="button" layoutX="207.0" layoutY="255.0" mnemonicParsing="false" onAction="#login" text="Login" />
+      <Button id="button" layoutX="342.0" layoutY="255.0" mnemonicParsing="false" onAction="#registrarse" text="Registrarse" />
    </children>
 </AnchorPane>
