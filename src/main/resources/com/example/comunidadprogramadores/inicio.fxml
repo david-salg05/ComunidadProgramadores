@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@../../../CSS/estilos.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comunidadprogramadores.Inicio_Controller">
    <children>
+      <ImageView fitHeight="42.0" fitWidth="41.0" layoutX="536.0" layoutY="55.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Imagenes/inicio.png" />
+         </image>
+      </ImageView>
       <Label id="titulo" fx:id="mensaje" layoutX="42.0" layoutY="25.0" prefHeight="35.0" prefWidth="380.0" />
       <Button layoutX="443.0" layoutY="61.0" mnemonicParsing="false" onAction="#cerrarSesion" text="Cerrar Sesión" />
       <HBox layoutX="79.0" layoutY="103.0" prefHeight="35.0" prefWidth="442.0">

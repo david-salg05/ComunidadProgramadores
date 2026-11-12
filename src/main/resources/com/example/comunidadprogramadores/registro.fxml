@@ -7,7 +7,7 @@
 <AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@../../../CSS/estilos.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comunidadprogramadores.Registro_Controller">
    <children>
       <Label id="titulo" layoutX="175.0" layoutY="14.0" prefHeight="36.0" prefWidth="250.0" text="Registro usuarios" />
-      <VBox layoutX="114.0" layoutY="73.0" prefHeight="200.0" prefWidth="371.0">
+      <VBox layoutX="191.0" layoutY="100.0" prefHeight="200.0" prefWidth="371.0">
          <children>
             <HBox prefHeight="43.0" prefWidth="371.0">
                <children>
@@ -44,11 +44,12 @@
             </HBox>
          </children>
       </VBox>
-      <Button id="button" layoutX="135.0" layoutY="294.0" mnemonicParsing="false" onAction="#registrarUsuario" text="Registrar" />
-      <Button id="button" layoutX="334.0" layoutY="294.0" mnemonicParsing="false" onAction="#volverLogin" text="Volver al Login" />
-      <ImageView fitHeight="103.0" fitWidth="96.0" layoutX="419.0" layoutY="130.0" pickOnBounds="true" preserveRatio="true">
+      <Button id="button" layoutX="128.0" layoutY="322.0" mnemonicParsing="false" onAction="#registrarUsuario" text="Registrar" />
+      <Button id="button" layoutX="336.0" layoutY="322.0" mnemonicParsing="false" onAction="#volverLogin" text="Volver al Login" />
+      <ImageView fitHeight="129.0" fitWidth="103.0" layoutX="60.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../Imagenes/anhadirUsuario.jpg" />
-         </image></ImageView>
+            <Image url="@../../../Imagenes/rg.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
